@@ -1,7 +1,10 @@
 let rootElm = document.querySelector("body")
-console.log(rootElm);
 
 rootElm.innerHTML = `
-<header></header>
+<header>
+   <div class="logo__content">
+    <img src="" alt="">
+   </div>
+</header>
 <main></main>
 <footer></footer>`

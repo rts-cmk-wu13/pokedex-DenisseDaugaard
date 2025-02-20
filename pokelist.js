@@ -1,7 +1,6 @@
+console.log(rootElm);
 
-fetch("https://pokeapi.co/api/v2/pokemon/", {
-    
-}).then(response => response.json()).
+fetch("https://pokeapi.co/api/v2/pokemon/").then(response => response.json()).
     then(data => {
        console.log(data);
        
@@ -13,9 +12,10 @@ fetch("https://pokeapi.co/api/v2/pokemon/", {
     
         return `<article>
                 <h2>${pokemon.name}</h2>
+                <p>#${id}</p>
                 </article>
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png" alt="">
-            </article>`
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png" alt="image of a pokemon">
+                </article>`
 
     }).join("")
     
