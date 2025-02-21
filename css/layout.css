@@ -1,10 +1,14 @@
-body{
+.index__body{
     background-color:var(--main-color) ;
     --search-size:2rem;
 }
 
 
 /* ---------------------header------------------------- */
+
+header{
+    position: sticky;
+}
 
 .logo__content{
     font-size: var(--search-size);

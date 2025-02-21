@@ -1,93 +1,101 @@
 
 
+
 .background__color__1,
-.bar__1{
+.fill__1{
     background-color: var(--details1-color);
 }
-.label__1{
+.label__1,
+.sub-header__1{
     color: var(--details1-color);
 }
 
 .background__color__2,
-.bar__2{
+.fill__2{
     background-color: var(--details2-color);
 }
-.label__2{
+.label__2,
+.sub-header__2{
     color: var(--details2-color);
 }
 
 .background__color__3,
-.bar__3{
+.fill__3{
     background-color: var(--details3-color);
 }
-.label__3{
+.label__3,
+.sub-header__3{
     color: var(--details3-color);
 }
 
 
 .background__color__4,
-.bar__4{
+.fill__4{
     background-color: var(--details4-color);
 }
-.label__4{
+.label__4,
+.sub-header__4{
     color: var(--details4-color);
 }
 
 
 .background__color__5,
-.bar__5{
+.fill__5{
     background-color: var(--details5-color);
 }
-.label__5{
+.label__5,
+.sub-header__5{
     color: var(--details5-color);
 }
 
 
 
 .background__color__6,
-.bar__6{
+.fill__6{
     background-color: var(--details6-color);
 }
-.label__6{
+.label__6,
+.sub-header__6{
     color: var(--details6-color);
 }
 
 
 
-
-
 .background__color__7,
-.bar__7{
+.fill__7{
     background-color: var(--details7-color);
 }
-.label__7{
+.label__7,
+.sub-header__7{
     color: var(--details7-color);
 }
 
 
 
 .background__color__8,
-.bar__8{
+.fill__8{
     background-color: var(--details8-color);
 }
-.label__8{
+.label__8,
+.sub-header__8{
     color: var(--details8-color);
 }
 
 
 
 .background__color__9,
-.bar__9{
+.fill__9{
     background-color: var(--details9-color);
 }
-.label__9{
+.label__9,
+.sub-header__9{
     color: var(--details9-color);
 }
 
 
 
 .background__color__10,
-.bar__10{
+.fill__10{
     background-color: var(--details10-color);
 }
 .label__10{
@@ -97,7 +105,7 @@
 
 
 .background__color__11,
-.bar__11{
+.fill__11{
     background-color: var(--details11-color);
 }
 .label__11{
@@ -107,7 +115,7 @@
 
 
 .background__color__12,
-.bar__12{
+.fill__12{
     background-color: var(--details12-color);
 }
 .label__12{
@@ -115,12 +123,128 @@
 }
 
 
+/* -----------------------card section finished!!!!-------------- */
+
+
+.pokemon__details__card{
+    width: 60%;
+    margin:2% auto ;
+    padding-top: 1rem;
+
+    background-image:url(/img/ball__demo.svg);
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: 95% 2%;
+}
+
+.pokemon__details__header{
+    margin-inline:2rem;
+    font-size: 3rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pokemon__details__header h1 i{
+    margin-right: 1.5rem;
+}
+
+.header__icon{
+    display: flex;
+}
+
+
+
+.pokemon__details__card figure{
+   display: flex;
+   justify-content: center;
+   height: 16rem;
+}
 
 
 
 .pokemon__details__info{
     background-color: white;
+    margin: 0.2rem;
+    border-radius: 1rem;
+    padding: 18% 1rem 0.5rem ;
+    box-shadow: inset 0px 1px 3px 1px rgba(0, 0, 0, 0.25);
+    position: relative;
 }
+
+
+.pokemon__details__card figure img{
+    width: 35%;
+    height: auto;
+    position: absolute;
+    z-index: 1;
+    top: 18%;
+
+}
+
+.details__sub-header{
+    text-align: center;
+}
+
+.types{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.types button{
+    padding: 0.5rem .75rem;
+    border-radius: 3rem;
+    font-size: 1.2rem;
+    color: white;
+    border: none;
+    font-weight: bold;
+}
+
+.types button:first-child{
+    background-color:blue ;
+} 
+.types button:last-child{
+    background-color:#A43E9E ;
+}
+
+
+/* ----------about details-------------- */
+
+.pokemon__datails__about{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.no-columns{
+    grid-column: 1 / -1;
+    display: block;
+}
+
+
+.about__details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about__weight,
+.about__height{
+    display: flex;
+    align-items:center;
+    gap: 0.75rem;
+}
+
+.moves__abilities{
+   margin: 0;
+}
+
+.weight__name{
+   color:#666666;
+}
+/* --------------table----------------- */
 
 
 .stats-table {
@@ -140,7 +264,7 @@ td {
 }
 
 .value {
-    width: 30px;
+    width: 1.875rem;
     text-align: right;
 }
 
@@ -153,6 +277,7 @@ td {
     border-radius: 5px;
     overflow: hidden;
     width: 100%;
+    background-color: rgb(238, 236, 236);
 }
 
 .fill {
