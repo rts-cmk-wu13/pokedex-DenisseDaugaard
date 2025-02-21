@@ -1,0 +1,161 @@
+
+
+.background__color__1,
+.bar__1{
+    background-color: var(--details1-color);
+}
+.label__1{
+    color: var(--details1-color);
+}
+
+.background__color__2,
+.bar__2{
+    background-color: var(--details2-color);
+}
+.label__2{
+    color: var(--details2-color);
+}
+
+.background__color__3,
+.bar__3{
+    background-color: var(--details3-color);
+}
+.label__3{
+    color: var(--details3-color);
+}
+
+
+.background__color__4,
+.bar__4{
+    background-color: var(--details4-color);
+}
+.label__4{
+    color: var(--details4-color);
+}
+
+
+.background__color__5,
+.bar__5{
+    background-color: var(--details5-color);
+}
+.label__5{
+    color: var(--details5-color);
+}
+
+
+
+.background__color__6,
+.bar__6{
+    background-color: var(--details6-color);
+}
+.label__6{
+    color: var(--details6-color);
+}
+
+
+
+
+
+.background__color__7,
+.bar__7{
+    background-color: var(--details7-color);
+}
+.label__7{
+    color: var(--details7-color);
+}
+
+
+
+.background__color__8,
+.bar__8{
+    background-color: var(--details8-color);
+}
+.label__8{
+    color: var(--details8-color);
+}
+
+
+
+.background__color__9,
+.bar__9{
+    background-color: var(--details9-color);
+}
+.label__9{
+    color: var(--details9-color);
+}
+
+
+
+.background__color__10,
+.bar__10{
+    background-color: var(--details10-color);
+}
+.label__10{
+    color: var(--details10-color);
+}
+
+
+
+.background__color__11,
+.bar__11{
+    background-color: var(--details11-color);
+}
+.label__11{
+    color: var(--details11-color);
+}
+
+
+
+.background__color__12,
+.bar__12{
+    background-color: var(--details12-color);
+}
+.label__12{
+    color: var(--details12-color);
+}
+
+
+
+
+
+.pokemon__details__info{
+    background-color: white;
+}
+
+
+.stats-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 5px;
+}
+
+.label {
+    font-weight: bold;
+    width: 40px;
+    text-transform: uppercase;
+    border-right: 3px solid #E0E0E0;
+}
+
+.value {
+    width: 30px;
+    text-align: right;
+}
+
+.bar-container {
+    width: 100%;
+}
+
+.bar {
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.fill {
+    height: 100%;
+    border-radius: 5px;
+}
