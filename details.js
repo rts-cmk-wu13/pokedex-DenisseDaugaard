@@ -23,13 +23,13 @@ then(pokemonData => {
         //console.log(dataEntry[1].flavor_text);
 
 
-        // let colorElm = speciesData.color.name
-        // console.log(colorElm);
-        // let tdColor = document.querySelectorAll(".fill")
-        // tdColor.forEach(colorBar =>{
-        //     colorBar.style.backgroundColor = colorElm
-        // })
-        // console.log(tdColor);
+        let colorElm = speciesData.color.name
+        console.log(colorElm);
+        let tdColor = document.querySelectorAll(".type__color")
+        tdColor.forEach(colorBar =>{
+            colorBar.style.backgroundColor = colorElm
+        })
+        console.log(tdColor);
         
 
     })
@@ -47,7 +47,7 @@ then(pokemonData => {
    
     //console.log(pokemonData);
     let pokemonDetails = document.createElement("article")
-    pokemonDetails.classList.add("pokemon__details__card")
+    pokemonDetails.classList.add("pokemon__details__card", "type__color")
     pokemonDetails.classList.add(`background__color__${pokemonId}`)
     pokemonDetails.innerHTML = `
     <header class="pokemon__details__header">
@@ -61,7 +61,7 @@ then(pokemonData => {
     <section class="pokemon__details__info">
         <div class="types">
         ${pokemonData.types.map(typeElm => `
-            <button class="details__type__btn__${pokemonData.id}">${typeElm.type.name}</button>`).join("")}
+            <button class="details__type__btn__${pokemonData.id} type__color">${typeElm.type.name}</button>`).join("")}
         </div>
         <section class="pokemon__datails__about">
             <h2 class="details__sub-header sub-header__${pokemonData.id} no-columns">About</h2>
@@ -96,37 +96,37 @@ then(pokemonData => {
                 <tr>
                     <th class="label label__${pokemonData.id}  hp">${statNameMap.hp}</th>
                     <td class="value">0${pokemonData.stats[0].base_stat}</td>
-                    <td class="bar-container"><div class="bar "><div class="fill fill__${pokemonData.id}" style="width: ${pokemonData.stats[0].base_stat}%;"></div></div></td>
+                    <td class="bar-container"><div class="bar "><div class="fill fill__${pokemonData.id} type__color" style="width: ${pokemonData.stats[0].base_stat}%;"></div></div></td>
                 </tr>
 
                 <tr>
                     <th class="label label__${pokemonData.id}  hp">${statNameMap.attack}</th>
                     <td class="value">0${pokemonData.stats[1].base_stat}</td>
-                    <td class="bar-container"><div class="bar "><div class="fill fill__${pokemonData.id}" style="width: ${pokemonData.stats[1].base_stat}%;"></div></div></td>
+                    <td class="bar-container"><div class="bar "><div class="fill fill__${pokemonData.id} type__color" style="width: ${pokemonData.stats[1].base_stat}%;"></div></div></td>
                 </tr>
 
                 <tr>
                     <th class="label label__${pokemonData.id}  hp">${statNameMap.defense}</th>
                     <td class="value">0${pokemonData.stats[2].base_stat}</td>
-                    <td class="bar-container"><div class="bar "><div class="fill fill__${pokemonData.id}" style="width: ${pokemonData.stats[2].base_stat}%;"></div></div></td>
+                    <td class="bar-container"><div class="bar "><div class="fill fill__${pokemonData.id} type__color" style="width: ${pokemonData.stats[2].base_stat}%;"></div></div></td>
                 </tr>
 
                 <tr>
                     <th class="label label__${pokemonData.id}  hp">${statNameMap.special}</th>
                     <td class="value">0${pokemonData.stats[3].base_stat}</td>
-                    <td class="bar-container"><div class="bar "><div class="fill fill__${pokemonData.id}" style="width: ${pokemonData.stats[3].base_stat}%;"></div></div></td>
+                    <td class="bar-container"><div class="bar "><div class="fill fill__${pokemonData.id} type__color" style="width: ${pokemonData.stats[3].base_stat}%;"></div></div></td>
                 </tr>
 
                 <tr>
                     <th class="label label__${pokemonData.id}  hp">${statNameMap.special_defense}</th>
                     <td class="value">0${pokemonData.stats[4].base_stat}</td>
-                    <td class="bar-container"><div class="bar "><div class="fill fill__${pokemonData.id}" style="width: ${pokemonData.stats[4].base_stat}%;"></div></div></td>
+                    <td class="bar-container"><div class="bar "><div class="fill fill__${pokemonData.id} type__color" style="width: ${pokemonData.stats[4].base_stat}%;"></div></div></td>
                 </tr>
 
                 <tr>
                     <th class="label label__${pokemonData.id}  hp">${statNameMap.speed}</th>
                     <td class="value">0${pokemonData.stats[5].base_stat}</td>
-                    <td class="bar-container"><div class="bar "><div class="fill fill__${pokemonData.id}" style="width: ${pokemonData.stats[5].base_stat}%;"></div></div></td>
+                    <td class="bar-container"><div class="bar "><div class="fill fill__${pokemonData.id} type__color" style="width: ${pokemonData.stats[5].base_stat}%;"></div></div></td>
                 </tr>
 
                 </table>
