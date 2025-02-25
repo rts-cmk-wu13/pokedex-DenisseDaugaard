@@ -76,7 +76,7 @@ form {
     grid-template-columns: repeat(3, 1fr);
     background-color: #FFFFFF;
     gap: 1rem;
-    padding: 4rem 2rem;
+    padding: 4rem 2rem 0;
 }
 
 .pokemon__card{

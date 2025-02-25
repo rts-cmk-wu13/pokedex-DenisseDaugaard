@@ -2,8 +2,9 @@ let params = new URLSearchParams(window.location.search)
 //console.log(params);
 let pokemonId = params.get("id")
 //console.log(pokemonId);
-
 let detailsRootElm = document.querySelector(".details__body")
+
+
 
 fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}/`)
 .then(response => response.json()).
@@ -13,7 +14,7 @@ then(pokemonData => {
     fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemonId}/`)
     .then(response => response.json()).
     then(speciesData =>{
-        console.log(speciesData);
+        //console.log(speciesData);
         
         let dataEntry = speciesData.flavor_text_entries.filter(specific => specific.language.name ==="en" )
         //console.log(dataEntry);
@@ -22,14 +23,43 @@ then(pokemonData => {
         entry.innerHTML = dataEntry[9].flavor_text.replace(/\f/g, " ")
         //console.log(dataEntry[1].flavor_text);
 
-
+        
         let colorElm = speciesData.color.name
         console.log(colorElm);
-        let tdColor = document.querySelectorAll(".type__color")
-        tdColor.forEach(colorBar =>{
-            colorBar.style.backgroundColor = colorElm
+        let pokemonCardColor = document.querySelectorAll(".type__color")
+        pokemonCardColor.forEach(cardColor =>{
+
+            if(colorElm =="yellow"){
+                console.log("hello");
+                colorElm = "#F9CF30"
+            } else if(colorElm =="green"){
+                 colorElm = "#74CB48"
+            } else if(colorElm == "blue"){
+                colorElm = "#6493EB"
+            } else if (colorElm == "white"){
+                colorElm = "#A7B723"
+            } else if (colorElm == "red"){
+                colorElm = "#F57D31"
+            }
+            let secondTypeBtn = document.querySelector(".types button:first-child")
+            //console.log(secondTypeBtn);
+            cardColor.style.backgroundColor = colorElm
+            secondTypeBtn.style.backgroundColor = colorElm
+            let h2 = document.querySelectorAll("h2")
+            h2.forEach(h2Elm =>{
+                h2Elm.style.color = colorElm
+            })
+
+            let th = document.querySelectorAll("th")
+            th.forEach(thElm => {
+                thElm.style.color = colorElm
+            })
+            //console.log(th);
+            //console.log(h2);
+            
         })
-        console.log(tdColor);
+        //console.log(pokemonCardColor);
+        
         
 
     })
@@ -61,7 +91,7 @@ then(pokemonData => {
     <section class="pokemon__details__info">
         <div class="types">
         ${pokemonData.types.map(typeElm => `
-            <button class="details__type__btn__${pokemonData.id} type__color">${typeElm.type.name}</button>`).join("")}
+            <button class="details__type__btn__${pokemonData.id}">${typeElm.type.name}</button>`).join("")}
         </div>
         <section class="pokemon__datails__about">
             <h2 class="details__sub-header sub-header__${pokemonData.id} no-columns">About</h2>
@@ -94,37 +124,37 @@ then(pokemonData => {
                <h2 class="details__sub-header sub-header__${pokemonData.id}">Base Stats</h2>
                <table class="stats-table">
                 <tr>
-                    <th class="label label__${pokemonData.id}  hp">${statNameMap.hp}</th>
+                    <th class="label label__${pokemonData.id} hp">${statNameMap.hp}</th>
                     <td class="value">0${pokemonData.stats[0].base_stat}</td>
                     <td class="bar-container"><div class="bar "><div class="fill fill__${pokemonData.id} type__color" style="width: ${pokemonData.stats[0].base_stat}%;"></div></div></td>
                 </tr>
 
                 <tr>
-                    <th class="label label__${pokemonData.id}  hp">${statNameMap.attack}</th>
+                    <th class="label label__${pokemonData.id} hp">${statNameMap.attack}</th>
                     <td class="value">0${pokemonData.stats[1].base_stat}</td>
                     <td class="bar-container"><div class="bar "><div class="fill fill__${pokemonData.id} type__color" style="width: ${pokemonData.stats[1].base_stat}%;"></div></div></td>
                 </tr>
 
                 <tr>
-                    <th class="label label__${pokemonData.id}  hp">${statNameMap.defense}</th>
+                    <th class="label label__${pokemonData.id} hp">${statNameMap.defense}</th>
                     <td class="value">0${pokemonData.stats[2].base_stat}</td>
                     <td class="bar-container"><div class="bar "><div class="fill fill__${pokemonData.id} type__color" style="width: ${pokemonData.stats[2].base_stat}%;"></div></div></td>
                 </tr>
 
                 <tr>
-                    <th class="label label__${pokemonData.id}  hp">${statNameMap.special}</th>
+                    <th class="label label__${pokemonData.id} hp">${statNameMap.special}</th>
                     <td class="value">0${pokemonData.stats[3].base_stat}</td>
                     <td class="bar-container"><div class="bar "><div class="fill fill__${pokemonData.id} type__color" style="width: ${pokemonData.stats[3].base_stat}%;"></div></div></td>
                 </tr>
 
                 <tr>
-                    <th class="label label__${pokemonData.id}  hp">${statNameMap.special_defense}</th>
+                    <th class="label label__${pokemonData.id} hp">${statNameMap.special_defense}</th>
                     <td class="value">0${pokemonData.stats[4].base_stat}</td>
                     <td class="bar-container"><div class="bar "><div class="fill fill__${pokemonData.id} type__color" style="width: ${pokemonData.stats[4].base_stat}%;"></div></div></td>
                 </tr>
 
                 <tr>
-                    <th class="label label__${pokemonData.id}  hp">${statNameMap.speed}</th>
+                    <th class="label label__${pokemonData.id} hp">${statNameMap.speed}</th>
                     <td class="value">0${pokemonData.stats[5].base_stat}</td>
                     <td class="bar-container"><div class="bar "><div class="fill fill__${pokemonData.id} type__color" style="width: ${pokemonData.stats[5].base_stat}%;"></div></div></td>
                 </tr>

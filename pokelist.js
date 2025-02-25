@@ -3,7 +3,6 @@ let currentOffset = 0
 let observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-            entry.target.style.backgroundColor = "red";
         }
     })
 })
@@ -36,12 +35,11 @@ function fetchPokemon(offset) {
             observer.observe(observedPokemon)
 
             // Remove any existing "Show More" button before adding a new one
-            let oldButton = document.querySelector(".load__btn")
-            if (oldButton) oldButton.remove()
+            let firstButton = document.querySelector(".load__btn")
+            if (firstButton) firstButton.remove()
 
             let loadPokemon = document.createElement("button")
-            loadPokemon.classList.add("load__btn")
-            loadPokemon.classList.add("no-columns")
+            loadPokemon.classList.add("load__btn","no-columns")
             loadPokemon.innerHTML = `Show More`
             loadPokemon.addEventListener("click", function () {
                 currentOffset += 21 // Increment the offset
