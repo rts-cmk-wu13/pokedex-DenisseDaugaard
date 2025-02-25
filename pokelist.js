@@ -1,31 +1,28 @@
 //console.log(rootElm);
+let currentOffset = 0
 
-fetch("https://pokeapi.co/api/v2/pokemon/").then(response => response.json()).
+ 
+let obsever = new IntersectionObserver(function(entries){
+    entries.forEach(function (entry){
+        //console.log(entry.target); //this is my elemnt 
+        if (entry.isIntersecting){
+            entry.target.style.backgroundColor = "red"
+             currentOffset = currentOffset + 21
+        }
+    })
+})
+
+function fetchPokemon (offset){
+fetch(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=21`).then(response => response.json()).
     then(data => {
        //console.log(data);
-
-       
-       let search = document.createElement("div")
-       search.classList.add("seach__pokemon")
-       search.innerHTML = `
-       <form>
-            <div class="search">
-            <i class="fa-solid fa-magnifying-glass" style="color: #DC0A2D;"></i>
-                <input type="seach" class="search__input" placeholder="Search">
-            </div>
-            <button class="search__btn">A</button>
-       </form>
-       `
-       console.log(search);
-       
-       
+    
         let divElemt1 = document.createElement("div")
         divElemt1.classList.add("pokemons__container")
-        divElemt1.innerHTML = data.results.map(function(pokemon){
-        
+        divElemt1.innerHTML += data.results.map(function(pokemon){
         let id = pokemon.url.slice(0, -1).split("/").pop()
         //console.log(id);
-        
+
         return `
                 <article class="pokemon__card">
                     <span class="pokemon__card__id">#${id}</span>
@@ -40,7 +37,18 @@ fetch("https://pokeapi.co/api/v2/pokemon/").then(response => response.json()).
 
     }).join("")
     
+    document.querySelector("main").append(divElemt1)
 
-    document.querySelector("main").append( search, divElemt1)
+    let observedPokemon = divElemt1.querySelector("article:last-child")
+    //console.log(observedPokemon);
+    obsever.observe(observedPokemon)
+
+    let loadPokemon = document.createElement("button")
+    loadPokemon.classList.add("load__btn")
+    loadPokemon.innerHTML =`Show More`
+    divElemt1.append(loadPokemon)
 
     })
+}
+
+fetchPokemon (currentOffset)
