@@ -1,0 +1,136 @@
+
+
+.background__color__1,
+.fill__1,
+.details__type__btn__1:first-child{
+    background-color: var(--details1-color);
+}
+.label__1,
+.sub-header__1{
+    color: var(--details1-color);
+}
+
+.background__color__2,
+.fill__2,
+.details__type__btn__2:first-child{
+    background-color: var(--details2-color);
+}
+.label__2,
+.sub-header__2{
+    color: var(--details2-color);
+}
+
+.background__color__3,
+.fill__3,
+.details__type__btn__3:first-child{
+    background-color: var(--details3-color);
+}
+.label__3,
+.sub-header__3{
+    color: var(--details3-color);
+}
+
+
+.background__color__4,
+.fill__4,
+.details__type__btn__4:first-child{
+    background-color: var(--details4-color);
+}
+.label__4,
+.sub-header__4{
+    color: var(--details4-color);
+}
+
+
+.background__color__5,
+.fill__5,
+.details__type__btn__5:first-child{
+    background-color: var(--details5-color);
+}
+.label__5,
+.sub-header__5{
+    color: var(--details5-color);
+}
+
+
+
+.background__color__6,
+.fill__6,
+.details__type__btn__6:first-child{
+    background-color: var(--details6-color);
+}
+.label__6,
+.sub-header__6{
+    color: var(--details6-color);
+}
+
+
+
+.background__color__7,
+.fill__7,
+.details__type__btn__7:first-child{
+    background-color: var(--details7-color);
+}
+.label__7,
+.sub-header__7{
+    color: var(--details7-color);
+}
+
+
+
+.background__color__8,
+.fill__8,
+.details__type__btn__8:first-child{
+    background-color: var(--details8-color);
+}
+.label__8,
+.sub-header__8{
+    color: var(--details8-color);
+}
+
+
+
+.background__color__9,
+.fill__9,
+.details__type__btn__9:first-child{
+    background-color: var(--details9-color);
+}
+.label__9,
+.sub-header__9{
+    color: var(--details9-color);
+}
+
+
+
+.background__color__10,
+.fill__10,
+.details__type__btn__10:first-child{
+    background-color: var(--details10-color);
+}
+.label__10{
+    color: var(--details10-color);
+}
+
+
+
+.background__color__11,
+.fill__11,
+.details__type__btn__10:first-child,
+.details__type__btn__11:first-child{
+    background-color: var(--details11-color);
+}
+.label__11{
+    color: var(--details11-color);
+}
+
+
+
+.background__color__12,
+.fill__12,
+.details__type__btn__12:first-child{
+    background-color: var(--details12-color);
+}
+.label__12{
+    color: var(--details12-color);
+}
+
