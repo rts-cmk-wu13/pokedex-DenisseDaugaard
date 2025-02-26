@@ -115,7 +115,8 @@
 
 .background__color__11,
 .fill__11,
-.details__type__btn__10:first-child{
+.details__type__btn__10:first-child,
+.details__type__btn__11:first-child{
     background-color: var(--details11-color);
 }
 .label__11{

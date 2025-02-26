@@ -12,17 +12,3 @@ rootElm.innerHTML = `
 </main>
 <footer></footer>`
 
-let search = document.createElement("div")
-search.classList.add("seach__pokemon")
-search.innerHTML = `
-<form>
-     <div class="search">
-     <i class="fa-solid fa-magnifying-glass" style="color: #DC0A2D;"></i>
-         <input type="seach" class="search__input" placeholder="Search">
-     </div>
-     <button class="search__btn">A</button>
-</form>
-`
-
-document.querySelector("main").append(search)
-//console.log(search);

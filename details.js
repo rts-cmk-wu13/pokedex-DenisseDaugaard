@@ -14,8 +14,7 @@ then(pokemonData => {
     fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemonId}/`)
     .then(response => response.json()).
     then(speciesData =>{
-        //console.log(speciesData);
-        
+    
         let dataEntry = speciesData.flavor_text_entries.filter(specific => specific.language.name ==="en" )
         //console.log(dataEntry);
         let entry = document.querySelector(".entry")
@@ -23,48 +22,8 @@ then(pokemonData => {
         entry.innerHTML = dataEntry[9].flavor_text.replace(/\f/g, " ")
         //console.log(dataEntry[1].flavor_text);
 
-        
-        let colorElm = speciesData.color.name
-        console.log(colorElm);
-        let pokemonCardColor = document.querySelectorAll(".type__color")
-        pokemonCardColor.forEach(cardColor =>{
-
-            if(colorElm =="yellow"){
-                console.log("hello");
-                colorElm = "#F9CF30"
-            } else if(colorElm =="green"){
-                 colorElm = "#74CB48"
-            } else if(colorElm == "blue"){
-                colorElm = "#6493EB"
-            } else if (colorElm == "white"){
-                colorElm = "#A7B723"
-            } else if (colorElm == "red"){
-                colorElm = "#F57D31"
-            }
-            let secondTypeBtn = document.querySelector(".types button:first-child")
-            //console.log(secondTypeBtn);
-            cardColor.style.backgroundColor = colorElm
-            secondTypeBtn.style.backgroundColor = colorElm
-            let h2 = document.querySelectorAll("h2")
-            h2.forEach(h2Elm =>{
-                h2Elm.style.color = colorElm
-            })
-
-            let th = document.querySelectorAll("th")
-            th.forEach(thElm => {
-                thElm.style.color = colorElm
-            })
-            //console.log(th);
-            //console.log(h2);
-            
-        })
-        //console.log(pokemonCardColor);
-        
-        
-
     })
 
-    
 
     let statNameMap = {
         "hp": "HP",
@@ -77,11 +36,10 @@ then(pokemonData => {
    
     //console.log(pokemonData);
     let pokemonDetails = document.createElement("article")
-    pokemonDetails.classList.add("pokemon__details__card", "type__color")
-    pokemonDetails.classList.add(`background__color__${pokemonId}`)
+    pokemonDetails.classList.add("pokemon__details__card", "type__color", `background__color__${pokemonId}`)
     pokemonDetails.innerHTML = `
     <header class="pokemon__details__header">
-        <h1 class="pokemon__details__header"><i class="fa-solid fa-arrow-left"></i> ${pokemonData.name}</h1>
+        <h1 class="pokemon__details__header"><a href="javascript:history.back()"><i class="fa-solid fa-arrow-left"></i></a> ${pokemonData.name}</h1>
         <span class ="pokemon__id">#${pokemonData.id}</span>
     </header>
     
@@ -160,7 +118,7 @@ then(pokemonData => {
                 </tr>
 
                 </table>
-                </section>
+    </section>
                 `    
     
     detailsRootElm.append(pokemonDetails)   
