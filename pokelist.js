@@ -68,6 +68,7 @@ function fetchPokemon(offset) {
             let updatedPokemon = storedPokemon.concat(newPokemonHTML)
             savePokemon(updatedPokemon)
             showPokemon(updatedPokemon)
+            pokemoColor(updatedPokemon)
         })
 }
 
