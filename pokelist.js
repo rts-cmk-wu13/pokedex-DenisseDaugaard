@@ -25,7 +25,8 @@ function showPokemon(pokemonList) {
         <input type="seach" class="search__input" placeholder="Search">
     </div>
     <button class="search__btn">A</button>
-</form>`
+</form>
+<div class="search__pokemon__options"></div>`
 
     let divElemt1 = document.createElement("div")
     divElemt1.classList.add("pokemons__container")
@@ -82,9 +83,11 @@ function addShowMoreButton(parentElement) {
     loadPokemon.addEventListener("click", function () {
         currentOffset += 20
         fetchPokemon(currentOffset)
+        
     })
 
     parentElement.append(loadPokemon)
+    
 }
 
 
@@ -97,6 +100,8 @@ window.addEventListener("load", function () {
     } else {
         fetchPokemon(currentOffset)
     }
+
+    searchPokemon ()
 })
 
 // let currentOffset = 0
