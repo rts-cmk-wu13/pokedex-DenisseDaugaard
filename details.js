@@ -84,7 +84,7 @@ then(pokemonData => {
     </header>
     
     <figure>
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonId}.png" alt="">
+        <img class="pokemon_image" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonId}.png" alt="image of ${pokemonData.name}">
     </figure>
     <section class="pokemon__details__info">
         <div class="types">
@@ -160,7 +160,53 @@ then(pokemonData => {
                 </table>
     </section>
                 `  
+
+detailsRootElm.append(pokemonDetails) 
+
     
-    detailsRootElm.append(pokemonDetails) 
+
+let pokemonCard = detailsRootElm.querySelector(".pokemon__details__card")
+let pokemonCardId = Number(detailsRootElm.querySelector(".pokemon__id").innerHTML.trim().replace("#", ""))
     
-    })
+function arrowNav (){
+        //console.log(pokemonCardId);  
+        console.log(pokemonCard);
+
+        if(pokemonCardId == 1){
+            console.log("its 1");
+            let nextArrow = document.createElement("a")
+            nextArrow.classList.add("next__arrow")
+            console.log(nextArrow);
+            nextArrow.innerHTML = `<img src="img/next__arrow.svg" alt="next arrow">`
+            nextArrow.href = `details.html?id=${pokemonCardId +1}`
+
+        pokemonCard.append(nextArrow) 
+
+        } else if(pokemonCardId > 1){
+            console.log("its bigger than 1");
+            let nextArrow = document.createElement("a")
+            nextArrow.classList.add("next__arrow")
+            nextArrow.innerHTML = `<img src="img/next__arrow.svg" alt="next arrow">`
+            nextArrow.href = `details.html?id=${pokemonCardId +1}`
+            
+            let prevArrow = document.createElement("a")
+            prevArrow.classList.add("prev__arrow")
+            prevArrow.innerHTML = `<img src="img/prev__arrow.svg" alt="prev arrow">`
+            prevArrow.href = `details.html?id=${pokemonCardId - 1}`
+
+            pokemonCard.append(nextArrow, prevArrow)
+        } else if(pokemonCardId === 3104){
+
+            let prevArrow = document.createElement("a")
+            prevArrow.classList.add("prev__arrow")
+            prevArrow.innerHTML = `<img src="img/prev__arrow.svg" alt="prev arrow">`
+            prevArrow.href = `details.html?id=${pokemonCardId - 1}`
+            
+            pokemonCard.append(prevArrow)
+
+        }
+    }
+
+    arrowNav()
+
+})

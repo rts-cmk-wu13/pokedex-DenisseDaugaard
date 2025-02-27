@@ -54,7 +54,7 @@ function fetchPokemon(offset) {
                 <article class="pokemon__card">
                     <span class="pokemon__card__id">#${id}</span>
                     <figure class="pokemon__card__img__cointainer">
-                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png" alt="image of a pokemon">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png" alt="image of ${pokemon.name}">
                     </figure>
                     <section class="pokemon__card__name">
                         <a href="details.html?id=${id}">${pokemon.name}</a>
@@ -63,7 +63,6 @@ function fetchPokemon(offset) {
                 `
             })
 
-            // Store and show Pokémon
             let storedPokemon = getStoredPokemon()
             let updatedPokemon = storedPokemon.concat(newPokemonHTML)
             savePokemon(updatedPokemon)
@@ -72,7 +71,7 @@ function fetchPokemon(offset) {
         })
 }
 
-// Function to add the "Show More" button
+
 function addShowMoreButton(parentElement) {
     let firstButton = document.querySelector(".load__btn")
     if (firstButton) firstButton.remove()
@@ -88,7 +87,7 @@ function addShowMoreButton(parentElement) {
     parentElement.append(loadPokemon)
 }
 
-// Load stored Pokémon on page reload
+
 window.addEventListener("load", function () {
     //alert("the page is loaded")
     let storedPokemon = getStoredPokemon()

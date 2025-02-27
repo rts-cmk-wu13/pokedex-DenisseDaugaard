@@ -69,6 +69,22 @@ p.entry{
     top: 20%;
 }
 
+.next__arrow,
+.prev__arrow{
+    position: absolute;
+    color: white;
+    top: 30%;
+    width: 2rem;
+    
+}
+.next__arrow{
+    right: 3.5%;
+}
+
+.prev__arrow{
+    left: 3.5%;
+}
+
 .details__sub-header{
     text-align: center;
 }
