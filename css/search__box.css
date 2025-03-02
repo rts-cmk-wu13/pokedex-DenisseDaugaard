@@ -8,8 +8,16 @@ border-radius: 1rem;
 padding: 0.5rem;
 
 position: absolute;
+display: none;
 }
 
+.search__pokemon__options--visible{
+    display: block;
+}
+
+i.fa-magnifying-glass{
+    cursor: pointer;
+}
 .search__options{
     background-color: white;
     border-radius: 0.5rem;
@@ -66,4 +74,18 @@ position: absolute;
 
 .custom-radio input:checked + .radio-circle::after {
     display: block; /* Show red dot when checked */
+}
+
+
+input:user-invalid{
+    background-color: hsla(0, 81%, 62%, 0.15);
+    }
+
+.error{
+    color:orangered;
+    font-weight: 600;
+}
+
+.error:empty {
+    display: none;
 }

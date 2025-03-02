@@ -1,28 +1,33 @@
 
-function searchPokemon (){
-    let searchBox = document.querySelector(".search__pokemon__options")
-    searchBox.innerHTML = `
-    <h3 class="options__title">Sort By:</h3>
-    <div class="search__options">
-            <div class="radio-container">
-            <label class="custom-radio">
-                <input type="radio" name="option" value="number">
-                <span class="radio-circle"></span>
-                Number
-            </label>
-        </div>
+function sortSearchBy (){
+    // search tools 
+    let searchBtn = rootElm.querySelector(".search__btn")
+    let searchBox = rootElm.querySelector(".search__pokemon__options")
+    let searchIcon = rootElm.querySelector(".fa-magnifying-glass")
+    //console.log(searchIcon);
+    //console.log(searchBox);
+    //console.log(searchBar);
 
-        <div class="radio-container">
-            <label class="custom-radio">
-                <input type="radio" name="option" value="name" checked>
-                <span class="radio-circle"></span>
-                Name
-            </label>
-        </div>
-    </div>
-    `
-    console.log(searchBox);
-    
+    searchIcon.addEventListener("click", function(){
+        searchBox.classList.add("search__pokemon__options--visible")
+    })
 
+
+    rootElm.querySelectorAll('[name="option"]').forEach(option => {
+        option.addEventListener("change", function(){
+
+            searchBox.classList.remove("search__pokemon__options--visible")
+
+            if(this.value == "number"){
+                //console.log("number");
+                searchBtn.textContent = "#"  
+                
+            } else{
+                searchBtn.textContent = "A"
+
+            }
+            
+        })
+    })
     
 }

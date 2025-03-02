@@ -6,13 +6,18 @@ let detailsRootElm = document.querySelector(".details__body")
 
 
 fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}/`)
-.then(response => response.json()).
-
-then(pokemonData => {
+.then(response => {
+    console.log(response);
+    if(!response.ok){
+       throw new Error("Pokemon Not Found :(")
+    }
+    return response.json()
+})
+.then(pokemonData => {
 
     fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemonId}/`)
-    .then(response => response.json()).
-    then(speciesData =>{
+    .then(response => response.json())
+    .then(speciesData =>{
     
         let dataEntry = speciesData.flavor_text_entries.filter(specific => specific.language.name ==="en" )
         //console.log(dataEntry);
@@ -21,7 +26,7 @@ then(pokemonData => {
         entry.innerHTML = dataEntry[9].flavor_text.replace(/\f/g, " ")
         //console.log(dataEntry[1].flavor_text);
         
-        function pokemoColor(pokemonId){
+        function pokemoColor(){
 
             let colorElm = speciesData.color.name
             console.log(colorElm);
@@ -64,7 +69,6 @@ then(pokemonData => {
 
     })
 
-
     let statNameMap = {
         "hp": "HP",
         "attack": "ATK",
@@ -79,7 +83,7 @@ then(pokemonData => {
     pokemonDetails.classList.add("pokemon__details__card", "type__color", `background__color__${pokemonId}`)
     pokemonDetails.innerHTML = `
     <header class="pokemon__details__header">
-        <h1 class="pokemon__details__header"><a href="javascript:history.back()"><i class="fa-solid fa-arrow-left"></i></a> ${pokemonData.name}</h1>
+        <h1 class="pokemon__details__header"><a href="index.html"><i class="fa-solid fa-arrow-left"></i></a> ${pokemonData.name}</h1>
         <span class ="pokemon__id">#${pokemonData.id}</span>
     </header>
     
@@ -209,4 +213,8 @@ function arrowNav (){
 
     arrowNav()
 
+}).catch(function(error){
+    document.querySelector("body").innerHTML= `
+    <h2>${error.message}</h2>
+    <p>Please go back to <a href="index.html">Pokédex</a></p>  `
 })
