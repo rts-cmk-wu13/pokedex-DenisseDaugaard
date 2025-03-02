@@ -1,0 +1,91 @@
+
+.search__pokemon__options{
+background-color: var(--main-color);
+color: white;
+width: 15rem;
+box-shadow: inset 0px 1px 3px 1px rgba(63, 63, 63, 0.25);
+border-radius: 1rem;
+padding: 0.5rem;
+
+position: absolute;
+display: none;
+}
+
+.search__pokemon__options--visible{
+    display: block;
+}
+
+i.fa-magnifying-glass{
+    cursor: pointer;
+}
+.search__options{
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.options__title{
+    margin: 1rem;
+}
+
+.search__options label{
+    color: black;
+}
+
+.radio-container {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.custom-radio {
+    display: flex;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    color: black;
+}
+
+.custom-radio input {
+    display: none; /* Hide default radio button */
+}
+
+.radio-circle {
+    width: 20px;
+    height: 20px;
+    border: 2px solid red;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+}
+
+.radio-circle::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    display: none;
+}
+
+.custom-radio input:checked + .radio-circle::after {
+    display: block; /* Show red dot when checked */
+}
+
+
+input:user-invalid{
+    background-color: hsla(0, 81%, 62%, 0.15);
+    }
+
+.error{
+    color:orangered;
+    font-weight: 600;
+}
+
+.error:empty {
+    display: none;
+}
